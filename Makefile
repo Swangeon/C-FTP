@@ -1,9 +1,7 @@
-LIBS = -lzmq -Wall -Wextra -Wno-unused -fsanitize=undefined -fsanitize=address -fstack-protector-all -v
-
-all: server client
+ARGS = -lzmq -Wall -Wextra -Wno-unused -fsanitize=undefined -fsanitize=address -fstack-protector-all -v
 
 server: ftp-server.c
-	gcc $< $(LIBS) -o $@
+	gcc $< $(ARGS) -o $@
 
 client: ftp-client.c
-	gcc $< $(LIBS) -o $@
+	gcc $< $(ARGS) -o $@
